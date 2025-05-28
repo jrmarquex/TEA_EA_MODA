@@ -1,9 +1,8 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import CroquisGallery from "./pages/CroquisGallery";
@@ -23,7 +22,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/sobre" element={<Index />} />
@@ -39,7 +38,7 @@ const App = () => (
           <Route path="/press-kit" element={<Index />} />
           <Route path="/marca-social" element={<Index />} />
           <Route path="/backstage" element={<Index />} />
-          
+
           {/* Gallery pages */}
           <Route path="/croquis-gallery" element={<CroquisGallery />} />
           <Route path="/lookbook-gallery" element={<LookbookGallery />} />
@@ -50,11 +49,11 @@ const App = () => (
           <Route path="/press-kit-gallery" element={<PressKitGallery />} />
           <Route path="/backstage-gallery" element={<BackstageGallery />} />
           <Route path="/fashion-film-gallery" element={<FashionFilmGallery />} />
-          
+
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
